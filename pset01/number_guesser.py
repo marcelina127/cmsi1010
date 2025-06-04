@@ -12,7 +12,10 @@
 # Things to do:
 
 # Generate a random number between 1 and 1000.
-
+def number_guesser(s):
+  import random
+  number = random.randomint(1, 1000)
+  
 # Ask the user to guess the number. In your prompt, let the user know they
 # can type 'bye' or 'exit' to quit the program.
 #

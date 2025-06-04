@@ -7,18 +7,21 @@ def show_help():
 
 def show_all_animals():
     print("The animals in the zoo are:")
-    print("• Clover the Bunny 🐇")
-    print("• Coco the Baby Goat 🐐")
-    print("• Arno the Alligator 🐊")
+    print("• clover the Bunny 🐇")
+    print("• coco the Baby Goat 🐐")
+    print("• arno the Alligator 🐊")
+    print("• bella the Bear 🐻")
 
 
 def pet_animal(animal):
-    if animal == "Clover":
+    if animal == "clover":
         print("Clover is so happy! ❤️")
-    elif animal == "Coco":
+    elif animal == "coco":
         print("Coco the Baby Goat thanks you! 🥰")
-    elif animal == "Arno":
+    elif animal == "arno":
         print("Actually, we cannot allow you to pet Arno. ⛔️")
+    elif animal == "bella":
+        print("Bella is a baby!🍼")
     else:
         print("Sorry, I don't know that animal")
 
@@ -30,7 +33,7 @@ print()
 
 keep_going = True
 while keep_going: 
-    response = input("What would you like to do? ")
+    response = input("What would you like to do? ").strip().lower()
     if response == "help":
         show_help()
     elif response == "see":
