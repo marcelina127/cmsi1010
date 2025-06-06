@@ -41,7 +41,7 @@ def word_frequencies(s):
          count[word] += 1
        else: count[word]= 1
     return count
-         
+        
 
 assert is_odd(3) == True
 assert is_odd(8) == False
