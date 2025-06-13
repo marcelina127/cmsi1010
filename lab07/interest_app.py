@@ -1,8 +1,19 @@
 import locale
 from interest import investment_value, years_to_reach_goal 
+locale.setlocale(locale.LC_ALL, 'en_US')
 
 print("Welcome to the interest app!")
 
+while True:
+    option = input("What would you like to do? Enter 'value', 'goal', or 'exit':")
+    option = option.strip().lower()
+    match option:
+        case "value":
+            print (investment_value)
+        case "goal":
+            print (years_to_reach_goal)
+        case "exit":
+            break
 print(investment_value(start=10000, 
                        tax_rate=.13, 
                        years=25, 
@@ -15,9 +26,3 @@ print(years_to_reach_goal(start= 10000,
                          deposit=1000,
                          goal= 1000000))
 
-locale.setlocale(locale.LC_ALL, 'ru_RU')
-print(locale.currency(3552.99315, grouping=True))
-locale.setlocale(locale.LC_ALL, 'en_US')
-print(locale.currency(3552.99315, grouping=True))
-locale.setlocale(locale.LC_ALL, 'en_GB')
-print(locale.currency(3552.99315, grouping=True))
