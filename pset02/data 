@@ -1,0 +1,74 @@
+import unittest
+
+def third_element(t):
+    if not isinstance(t, tuple):
+        raise TypeError("Input must be a tuple")
+    if len(t) < 3:
+        raise IndexError("Tuple must have at least three elements")
+    return t[2]
+
+def reverse_pair(t):
+    if not isinstance(t, tuple):
+        raise TypeError("Input must be a tuple")
+    if len(t) != 2:
+        raise ValueError("Tuple must have exactly two elements")
+    return (t[1], t[0])
+
+def middle_element_of_list(a):
+    if not isinstance(a, list):
+        raise TypeError("Input must be a list")
+    if len(a) == 0:
+        raise IndexError("List is empty")
+    middle_index = (len(a) - 1) // 2
+    return a[middle_index]
+
+def unique_elements(a):
+    if not isinstance(a, list):
+        raise TypeError("Input must be a list")
+    return set(a)
+
+def contains_duplicates(a):
+    if not isinstance(a, list):
+        raise TypeError("Input must be a list")
+    return len(set(a)) != len(a)
+
+def is_superset(a, b):
+    if not isinstance(a, set) or not isinstance(b, set):
+        raise TypeError("Both inputs must be sets")
+    return a.issuperset(b)
+
+def is_subset(a, b):
+    if not isinstance(a, set) or not isinstance(b, set):
+        raise TypeError("Both inputs must be sets")
+    return a.issubset(b)
+
+def is_disjoint(a, b):
+    if not isinstance(a, set) or not isinstance(b, set):
+        raise TypeError("Both inputs must be sets")
+    return a.isdisjoint(b)
+
+def most_frequent_value_or_values(d):
+    if not isinstance(d, dict):
+        raise TypeError("Input must be a dictionary")
+    if not d:
+        return None
+    from collections import Counter
+    value_counts = Counter(d.values())
+    max_freq = max(value_counts.values())
+    most_frequent = {val for val, freq in value_counts.items() if freq == max_freq}
+    return most_frequent if len(most_frequent) > 1 else most_frequent.pop()
+
+def key_is_in_both_dictionaries(d1, d2, key):
+    if not isinstance(d1, dict) or not isinstance(d2, dict):
+        raise TypeError("Both inputs must be dictionaries")
+    return key in d1 and key in d2
+
+def word_frequencies(s):
+    if not isinstance(s, str):
+        raise TypeError("Input must be a string")
+    words = s.split()
+    from collections import Counter
+    return dict(Counter(words))
+
+# The unit tests follow here (unchanged from your original script)
+# ...
